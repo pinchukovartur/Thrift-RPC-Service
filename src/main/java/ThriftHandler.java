@@ -2,7 +2,7 @@ import org.apache.thrift.TException;
 
 public class ThriftHandler implements ThriftService.Iface {
 
-    DAO dao;
+    private DAO dao;
 
     public ThriftHandler(){dao = new DAO();}
 
