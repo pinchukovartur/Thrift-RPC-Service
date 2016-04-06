@@ -1,0 +1,10 @@
+namespace java tutorial
+
+typedef i32 int
+service ThriftService
+{
+	String setNewStudentInDB(1:String name, 2:String surname, 3:int group, 4:int averageScore),
+	String deleteStudentById(1:int idstudent),
+	String searchStudentById(1:int idstudent),
+	String updateStudentById(1:int idStudent, 2:String name, 3:String surname, 4:int group, 5:int averageScore),
+}
