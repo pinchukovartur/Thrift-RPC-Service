@@ -1,10 +1,17 @@
 namespace java tutorial
 
 typedef i32 int
-service ThriftService
+service thriftservice.ThriftService
 {
-	string setNewStudentInDB(1:string name, 2:string surname, 3:int group, 4:int averageScore),
-	string deleteStudentById(1:int idstudent),
-	string searchStudentById(1:int idstudent),
-	string updateStudentById(1:int idStudent, 2:string name, 3:string surname, 4:int group, 5:int averageScore),
+	void setNewStudentInDB(1:thriftservice.Student student),
+	void deleteStudentById(1:int idstudent),
+	thriftservice.Student searchStudentById(1:int idstudent),
+	void updateStudentById(1:thriftservice.Student student),
+}
+struct thriftservice.Student {
+  1: i32 studentid,
+  2: string name,
+  3: string surnamename,
+  4: i32 group,
+  5: i32 score,
 }
